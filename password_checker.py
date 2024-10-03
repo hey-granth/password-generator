@@ -9,10 +9,10 @@ def strength(password):
 
 
 def generate_password():
-    password = ''
+    password = ""
     while len(password) < 8:
         password += str(random.randint(1, 99))
-        password += random.choice('abcdefghijklmnopqrstuvwxyz')
+        password += random.choice("abcdefghijklmnopqrstuvwxyz")
     return password
 
 
@@ -20,19 +20,21 @@ def main():
     password = input("Enter a password: ")
     print(strength(password))
 
-    if strength(password) == 'Weak':
-        response = input("your password is too weak, want me to make a good one for you? (yes/no): ")
+    if strength(password) == "Weak":
+        response = input(
+            "your password is too weak, want me to make a good one for you? (yes/no): "
+        )
 
-        if response.lower() == 'yes':
+        if response.lower() == "yes":
             print(generate_password())
-            print('Just remember to save it somewhere safe!')
+            print("Just remember to save it somewhere safe!")
 
         else:
-            print('Try again!')
+            print("Try again!")
 
     else:
         print("Ayee your password is strong! Good job!")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
